@@ -1,4 +1,6 @@
 doctype html
+- var gray9 = "#212529"
+- var gray8 = "#343a40"
 html(lang='en')
     head
         meta(charset="utf-8")
@@ -10,11 +12,12 @@ html(lang='en')
             crossorigin="anonymous"
         )
         title Homepage
-    body.bg-secondary
-        header
-            nav.navbar.navbar-expand-md.navbar-right.navbar-dark.bg-dark.p-2
-                div.container-fluid.px-5
-                    a.navbar-brand(href="#") Ryan Stam 
+    body.font-monospace(style=`background-color: ${gray8}; color: white` onload="typeWriter()")
+        div.min-vh-100
+            nav.navbar.navbar-expand-md.navbar-right.navbar-dark.bg-dark.p-2.shadow
+                div.container-fluid.px-md-3.h-25
+                    a.navbar-brand.p-0(href="#")
+                        img(src="/logoDark.jpg" alt="Ryan Stam" width="68" height="51")
                     button.navbar-toggler(type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
                         span.navbar-toggler-icon 
                     div#navbarSupportedContent.collapse.navbar-collapse.container-fluid

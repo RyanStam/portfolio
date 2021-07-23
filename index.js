@@ -4,6 +4,8 @@ var app = express();
 app.set('view engine', 'pug');
 app.set('views', './webpages');
 
+app.use(express.static('images'));
+
 app.get('/', function (req, res) {
     res.redirect('/homepage');
 });

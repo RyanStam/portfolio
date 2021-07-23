@@ -1,4 +1,6 @@
 doctype html
+- var gray9 = "#212529"
+- var gray8 = "#343a40"
 html(lang='en')
     head
         meta(charset="utf-8")
@@ -14,11 +16,13 @@ html(lang='en')
         //-     href="styles/nav.css"
         //- )
         title Homepage
-    body.bg-secondary
-        header
-            nav.navbar.navbar-expand-md.navbar-right.navbar-dark.bg-dark.p-2
-                div.container-fluid.px-5
-                    a.navbar-brand(href="#") Ryan Stam 
+    
+    body.font-monospace(style=`background-color: ${gray8}; color: white` onload="typeWriter()")
+        div.min-vh-100
+            nav.navbar.navbar-expand-md.navbar-right.navbar-dark.bg-dark.p-2.shadow
+                div.container-fluid.px-md-3.h-25
+                    a.navbar-brand.p-0(href="#")
+                        img(src="/logoDark.jpg" alt="Ryan Stam" width="68" height="51")
                     button.navbar-toggler(type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation")
                         span.navbar-toggler-icon 
                     div#navbarSupportedContent.collapse.navbar-collapse.container-fluid
@@ -42,29 +46,21 @@ html(lang='en')
                                         a.dropdown-item(href="/projects") Other
                             li.nav-item 
                                 a.nav-link(href="/contact") Contact
-            //- else 
-            //-     ul.nav.justify-content-center.nav-fill.nav-tabs
-            //-         li.nav-item 
-            //-             a.nav-link.active(aria-current="page" href="/homepage") Home 
-            //-         li.nav-item 
-            //-             a.nav-link(href="/about-me") About Me 
-            //-         li.nav-item
-            //-             a.nav-link.disabled(href="#") Logo or smth 
-            //-         li.nav-item.dropdown
-            //-             a.nav-link.dropdown-toggle(data-bs-toggle="dropdown" href="/projects" role="button" aria-expanded="false") Projects 
-            //-             ul.dropdown-menu 
-            //-                 li 
-            //-                     a.dropdown-item(href="/projects") Portfolio Website
-            //-                 li
-            //-                     hr.dropdown-divider
-            //-                 li 
-            //-                     a.dropdown-item(href="/projects") Food Pantry System
-            //-                 li
-            //-                     hr.dropdown-divider
-            //-                 li 
-            //-                     a.dropdown-item(href="/projects") Other Projects
-            //-         li.nav-item 
-            //-             a.nav-link(href="/contact") Contact
-        h1.display-1(style="text-align: center") Hello World!
+            section.container-fluid.position-absolute.bottom-50.row
+                h1#name.display-1(style="text-align: center")
+                
+
         
         script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous")
+        
+        script.
+            var i=0
+            var txt = 'Ryan Stam'
+            var speed = 100;
+            function typeWriter() {
+                if (i < txt.length) {
+                    document.getElementById("name").innerHTML += txt.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, speed);
+                }
+            }
