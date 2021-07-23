@@ -10,7 +10,6 @@ app.get('/', function (req, res) {
 app.get('/homepage', function (req, res) {
     res.render('homepage');
 });
-
 app.get('/about-me', function (req, res) {
     res.render('aboutMe');
 });
